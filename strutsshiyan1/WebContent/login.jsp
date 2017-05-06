@@ -8,7 +8,7 @@
 </head>
 <body>
 登录界面
-<form action="user!login.action" method = "post">
+<form action="loginuser.action" method = "post">
 	用户名：<input name = "name" type = "text">
 	密码：<input name = "password" type = "text">
 	邮箱：<input name = "email" type = "text">

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="user!register.action" method = "post">
+<form action="registeruser.action" method = "post">
 	用户名：<input name = "name" type = "text">
 	密码：<input name = "password" type = "text">
 	邮箱：<input name = "email" type = "text">

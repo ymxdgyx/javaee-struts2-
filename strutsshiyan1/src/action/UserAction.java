@@ -40,28 +40,26 @@ public class UserAction extends ActionSupport{
 		this.email = email;
 	}
 	
-	public String register(){
+	public String register() throws Exception{
 	//对用户次信息进行保存
 		System.out.println("register");
 		//用户名为以检验
-		Set<String> keys = DBUtil.getInstance().getUserTable().keySet();
-		for(String key: keys){  
-            if(key.equals(name)){
-            	try {
-					throw new Exception("用户名已存在");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            	return "error";
-            }
-        }  
+//		Set<String> keys = DBUtil.getInstance().getUserTable().keySet();
+//		for(String key: keys){  
+//            if(key.equals(name)){
+//            	try {
+//					throw new Exception("用户名已存在");
+//				} catch (Exception e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//            	return "error";
+//            }
+//        }  
 		
 		
 		UserBean user = new UserBean(name, password, email);
 		DBUtil.getInstance().insert(user);
-		String a = DBUtil.getInstance().getUser(name).getPassword();
-		System.out.println(a);
 		return "login";
 	}
 	public String login(){

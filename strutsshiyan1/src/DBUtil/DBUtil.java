@@ -54,16 +54,11 @@ public class DBUtil {
 	 * @param register
 	 * @throws DBUtilException
 	 */
-	public void insert(UserBean register)  {//throws DBUtilException
+	public void insert(UserBean register)throws Exception  {
 		// 判断此用户名的用户是否已存在
 		if (this.getUser(register.getName()) != null) {
 			// 若用户名已存在，抛出自定义数据库操作异常对象
-			try {
 				throw new Exception("用户名已存在！");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		userTable.put(register.getName(), register);
 	}

@@ -81,7 +81,9 @@ public class UserAction extends ActionSupport{
 	public void validate(){
 		//注册信息的检验
 		System.out.println("信息校验");
-		
+		if(name.equals("")||password.length()<6||email.equals("")){
+			this.addFieldError(name, "用户名不能为空");
+		}
 		
 	}
 }
